@@ -268,6 +268,7 @@
         }
 
         @media screen and (max-width: 804px) {
+
             .the-one-who-got-it-all {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -281,9 +282,13 @@
                 margin: 0 10px;
             }
 
-            .xp-card{margin: 10px;}
+            .xp-card {
+                margin: 10px;
+            }
 
-            .contact-container{margin: 10px;}
+            .contact-container {
+                margin: 10px;
+            }
 
             nav {
                 position: relative;
@@ -312,7 +317,6 @@
         }
 
         @media screen and (max-width: 495px) {
-
             .main-clmn {
                 grid-template-columns: 1fr;
             }
@@ -341,11 +345,12 @@
         <nav>
             <div id="sidebar">
                 <h1 class="title-txt">Hello, World! <br>I'm Jatin</h1>
-                <p class="txt">I'm pursuing a Bachelor's in Computer Science Engineering from <a href="#"
-                        style="color: #fff;">Galgotias</a>, India, graduating in 2024. My main focus is on TypeScript,
-                    JavaScript, and related frameworks, with Python as a secondary language. I’ve developed several AI
-                    and machine learning projects, and this website showcases my work, experience, and contact
-                    information.</p>
+                <p class="txt">Graduated in 2024 with a B.Tech in Computer Science from <a
+                        href="https://www.galgotiasuniversity.edu.in/" target="_blank"
+                        style="color: #fff;">Galgotias</a>, India. Passionate about TypeScript and JavaScript
+                    frameworks, with Python as my go-to for AI and ML projects. This site’s a glimpse into my work,
+                    journey, and ways to connect.</p>
+
                 <ul>
                     <li><a class="menu-item active" href="#section1">01&nbsp;
                             <hr>&nbsp;Skills
@@ -360,6 +365,7 @@
                             <hr>&nbsp;Contact
                         </a></li>
                 </ul>
+
                 <div class="profile">
                     <img class="profile-pic" style="height: 50px; border-radius: 50%;" src="pfp-yt.jpg" alt="">
                     <a class="mail-id" href="mailto:jatinjha83@gmail.com">jatinjha83@gmail.com</a>
@@ -433,8 +439,8 @@
 
                     (function anm() {
                         requestAnimationFrame(anm);
-                        grp.rotation.y += .005 + mx * .04;
-                        grp.rotation.x += my * .04;
+                        grp.rotation.y += .005 + mx * .02;
+                        grp.rotation.x += my * .02;
                         grp.children.forEach(s => s.lookAt(cam.position));
                         rndr.render(scn, cam);
                     })();
@@ -516,16 +522,16 @@
                         const deploymentUrl = repo.homepage ? repo.homepage : repo.html_url;
 
                         const cardContent = `
-            <div>
-                <img src="asset/earth.svg" alt="">
-                <p class="attribute-text">${repo.description || 'No description available.'}</p>
-            </div>
-            <h4 class="pro-attribute-subhead">${repo.name}
-                <a href="${deploymentUrl}" class="visit-link" target="_blank">Visit
-                    <img src="asset/openlink.svg" class="openlink" style="height: 17px; opacity: 60%;" alt="">
-                </a>
-            </h4>
-        `;
+                            <div>
+                                <img src="asset/earth.svg" alt="">
+                                <p class="attribute-text">${repo.description || 'No description available.'}</p>
+                            </div>
+                            <h4 class="pro-attribute-subhead">${repo.name}
+                                <a href="${deploymentUrl}" class="visit-link" target="_blank">Visit
+                                    <img src="asset/openlink.svg" class="openlink" style="height: 17px; opacity: 60%;" alt="">
+                                </a>
+                            </h4>
+                        `;
 
                         card.innerHTML = cardContent;
                         return card;
@@ -541,9 +547,47 @@
                             const projectCard = createProjectCard(repo);
                             mainClmn.appendChild(projectCard);
                         });
+
+                        // Save repos in local storage
+                        localStorage.setItem('githubRepos', JSON.stringify(topRepos));
+                        // Set expiration time for 24 hours
+                        const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+                        localStorage.setItem('githubReposExpiration', expirationTime);
                     }
 
-                    document.addEventListener('DOMContentLoaded', populateProjects);
+                    function isLocalStorageExpired() {
+                        const expirationTime = localStorage.getItem('githubReposExpiration');
+                        if (!expirationTime) {
+                            return true;
+                        }
+                        const currentTime = new Date().getTime();
+                        return currentTime > expirationTime;
+                    }
+
+                    function getStoredRepos() {
+                        const storedRepos = localStorage.getItem('githubRepos');
+                        if (storedRepos) {
+                            return JSON.parse(storedRepos);
+                        }
+                        return null;
+                    }
+
+                    async function updateProjects() {
+                        if (isLocalStorageExpired()) {
+                            await populateProjects();
+                        } else {
+                            const storedRepos = getStoredRepos();
+                            if (storedRepos) {
+                                const mainClmn = document.getElementById('main-clmn');
+                                storedRepos.forEach(repo => {
+                                    const projectCard = createProjectCard(repo);
+                                    mainClmn.appendChild(projectCard);
+                                });
+                            }
+                        }
+                    }
+
+                    document.addEventListener('DOMContentLoaded', updateProjects);
                 </script>
             </section>
 
@@ -601,7 +645,8 @@
 
         cards.forEach((card) => {
             observer.observe(card);
-        });</script>
+        });
+    </script>
 </body>
 
 </html>
