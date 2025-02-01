@@ -11,6 +11,17 @@
             scroll-behavior: smooth;
         }
 
+        div {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease-out, transform 0.2s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
         body {
             background-color: black;
             color: white;
@@ -646,6 +657,35 @@
         cards.forEach((card) => {
             observer.observe(card);
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in"); // Apply animation
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            function observeNewDivs() {
+                document.querySelectorAll("div").forEach((div) => {
+                    if (!div.classList.contains("fade-in")) {
+                        observer.observe(div);
+                    }
+                });
+            }
+
+            // Observe existing divs
+            observeNewDivs();
+
+            // Use MutationObserver to detect newly added divs
+            const mutationObserver = new MutationObserver(() => observeNewDivs());
+            mutationObserver.observe(document.body, { childList: true, subtree: true });
+        });
+
     </script>
 </body>
 
