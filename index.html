@@ -275,7 +275,7 @@
             border-radius: 20px;
             padding: 10px;
             overflow: hidden;
-            margin-bottom: 20vh;
+            margin-bottom: 25vh;
         }
 
         @media screen and (max-width: 804px) {
@@ -372,6 +372,9 @@
                     <li><a class="menu-item" href="#section3">03&nbsp;
                             <hr>&nbsp;Projects
                         </a></li>
+                    <li><a class="menu-item" href="#section5">04&nbsp;
+                            <hr>&nbsp;Certificates
+                        </a></li>
                     <li><a class="menu-item" href="#section4">04&nbsp;
                             <hr>&nbsp;Contact
                         </a></li>
@@ -458,61 +461,45 @@
                 </script>
             </section>
 
+            <script>
+                fetch('experience.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const section = document.getElementById('section2');
+
+                        data.forEach(exp => {
+                            const card = document.createElement('div');
+                            card.className = 'xp-card';
+
+                            card.innerHTML = `
+                        <div class="xp-head">
+                          <p>${exp.role}</p>
+                          <img src="asset/openlink.svg" class="openlink" alt="">
+                        </div>
+                        <div class="company-details">
+                          <img src="${exp.logo}" class="logo" style="${exp.logoStyle || ''}" alt="">
+                          <h2>${exp.company}</h2>
+                        </div>
+                        <p class="date">${exp.date}</p>
+                        <ul>
+                          ${exp.skills.map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                      `;
+
+                            section.appendChild(card);
+                        });
+                    })
+                    .catch(err => {
+                        console.error('Failed to load experience data:', err);
+                    });
+            </script>
+
+
             <section id="section2">
                 <h3>Experience</h3>
-                <div class="xp-card">
-                    <div class="xp-head">
-                        <p>Software Devloper</p>
-                        <img src="asset/openlink.svg" class="openlink" alt="">
-                    </div>
-                    <div class="company-details"><img
-                            src="https://eco-cdn.iqpc.com/eco/images/partners/hSBFAjwe319cmBnPGl15RaBj5yCxnICDnwHOjEir.png"
-                            class="logo" alt="">
-                        <h2>McDermott International, Ltd</h2>
-                    </div>
-                    <p class="date">05/02/2024 - 13/08/2024</p>
-                    <ul>
-                        <li>Angular</li>
-                        <li>ASP.NET</li>
-                        <li>Ms SQL</li>
-                        <li>Power Bi</li>
-                    </ul>
-                </div>
-                <div class="xp-card">
-                    <div class="xp-head">
-                        <p>AI Intern</p>
-                        <img src="asset/openlink.svg" class="openlink" alt="">
-                    </div>
-                    <div class="company-details"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="logo" alt="">
-                        <h2>International Business Machines Corporation</h2>
-                    </div>
-                    <p class="date">05/02/2024 - 13/08/2024</p>
-                    <ul>
-                        <li>Python</li>
-                        <li>NumPy</li>
-                        <li>Pandas</li>
-                        <li>Machine Learning</li>
-                    </ul>
-                </div>
-                <div class="xp-card">
-                    <div class="xp-head">
-                        <p>Startup</p>
-                        <img src="asset/openlink.svg" class="openlink" alt="">
-                    </div>
-                    <div class="company-details"><img style="filter: invert(1);"
-                            src="https://jatin0jha.github.io/U-Fab/asseta/logo%20blck.png" class="logo" alt="">
-                        <h2>U-Fabric</h2>
-                    </div>
-                    <p class="date">05/02/2024 - 13/08/2024</p>
-                    <ul>
-                        <li>Sales</li>
-                        <li>Web Devlopment</li>
-                        <li>Leadership</li>
-                        <li>Team work</li>
-                    </ul>
-                </div>
+                <!-- Cards will be inserted here -->
             </section>
+
 
             <section id="section3">
                 <h3>Projects</h3>
@@ -600,6 +587,75 @@
 
                     document.addEventListener('DOMContentLoaded', updateProjects);
                 </script>
+            </section>
+
+            <style>
+                .certificate {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    background-color: #1B1B1B;
+                    padding: 15px;
+                    border-radius: 30px;
+                }
+
+                .certificate-details {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+
+                .certificate-img {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 auto;
+                    display: block;
+                    border-radius: 15px;
+                }
+
+                .cert-detail {
+                    color: #959595;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                a{
+                    color: #959595;
+                    text-decoration: none;
+                }
+
+                .cert-btn {
+                    background-color: #7bba96;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    transition: background-color 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .cert-btn:hover {
+                    background-color: #6a9b85;
+                }
+            </style>
+
+            <section id="section5">
+                <h3 style="margin-top: 100px;">Certificates</h3>
+                <div class="certificate">
+                    <img src="certificates/DotNetCert.png" class="certificate-img" alt="">
+                    <div class="certificate-details">
+                        <div>
+                            <h2>Foundational C# with Microsoft</h2>
+                            <p class="cert-detail">April, 2025</p>
+                            <p class="cert-detail">Credential ID: imded-fcswm</p>
+                        </div>
+                        <a href="https://www.freecodecamp.org/certification/imded/foundational-c-sharp-with-microsoft" target="_blank"><button class="cert-btn">Open<img src="asset/openlink.svg" class="openlink" style="height: 17px; margin: 0 0 0 5px; " alt=""></button></a>
+                    </div>
+
+                </div>
             </section>
 
             <section id="section4">
