@@ -1,0 +1,64 @@
+[
+    {
+        "role": "Software Developer",
+        "company": "LIVINGPOINT SALES PVT. LTD.",
+        "logo": "https://scci.co.in/image/data/logo1.png",
+        "date": "07/04/2025 - present",
+        "skills": [
+            "AL Language",
+            "Microsoft Dynamics 365",
+            ".NET Core",
+            "Wordpress"
+        ]
+    },
+    {
+        "role": "Software Developer",
+        "company": "Janki Creations",
+        "logo": "https://janki.pages.dev/asset/WhatsApp%20Image%202023-08-11%20at%2012.43.24.jpeg",
+        "date": "01/02/2025 - 01/04/2025",
+        "skills": [
+            "Java",
+            "Microservices",
+            "REST API",
+            "Node.js",
+            "Express.js"
+        ]
+    },
+    {
+        "role": "Software Developer",
+        "company": "McDermott International, Ltd",
+        "logo": "https://eco-cdn.iqpc.com/eco/images/partners/hSBFAjwe319cmBnPGl15RaBj5yCxnICDnwHOjEir.png",
+        "date": "05/02/2024 - 13/08/2024",
+        "skills": [
+            "Angular",
+            "ASP.NET",
+            "Ms SQL",
+            "Power Bi"
+        ]
+    },
+    {
+        "role": "AI Intern",
+        "company": "International Business Machines Corporation",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+        "date": "05/02/2024 - 13/08/2024",
+        "skills": [
+            "Python",
+            "NumPy",
+            "Pandas",
+            "Machine Learning"
+        ]
+    },
+    {
+        "role": "Startup",
+        "company": "U-Fabric",
+        "logo": "https://jatin0jha.github.io/U-Fab/asseta/logo%20blck.png",
+        "logoStyle": "filter: invert(1);",
+        "date": "05/02/2024 - 13/08/2024",
+        "skills": [
+            "Sales",
+            "Web Development",
+            "Leadership",
+            "Team work"
+        ]
+    }
+]
