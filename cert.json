@@ -1,0 +1,16 @@
+[
+  {
+    "image_url": "certificates/DotNetCert.png",
+    "title": "Foundational C# with Microsoft",
+    "date": "April, 2025",
+    "credential_id": "imded-fcswm",
+    "view_url": "https://www.freecodecamp.org/certification/imded/foundational-c-sharp-with-microsoft"
+  },
+  {
+    "image_url": "certificates/CS50.png",
+    "title": "CS50x",
+    "date": "April, 2025",
+    "credential_id": "df8c97b1-8ec4-451f-b1ef-eac3f5078a26",
+    "view_url": "https://certificates.cs50.io/df8c97b1-8ec4-451f-b1ef-eac3f5078a26.pdf?size=letter"
+  }
+] 
