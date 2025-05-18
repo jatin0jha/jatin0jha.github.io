@@ -23,11 +23,11 @@
         }
 
         body {
-            background-color: black;
+            background-color: #101013;
             color: white;
             margin: 0;
             padding: 0;
-            font-family: monospace;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .the-one-who-got-it-all {
@@ -67,7 +67,7 @@
         }
 
         nav ul li a {
-            color: rgb(137, 137, 137);
+            color: #b8b8b8;
             display: flex;
             width: min-content;
             align-items: center;
@@ -144,77 +144,20 @@
         }
 
         main section h3 {
-            font-size: 35px;
+            font-size: 22.4px;
             font-weight: 250;
             margin: 20px 10px;
         }
 
-        /* width */
-        ::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f100;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
         .main-clmn {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 240px 240px;
             gap: 8px;
-        }
-
-        .pro-card {
-            background-color: #1b1b1b;
-            aspect-ratio: 1;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-radius: 20px;
-        }
-
-        .pro-attribute-subhead {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .visit-link {
-            color: rgb(151, 151, 151);
-            text-decoration: none;
-            display: flex;
-            font-size: 12px;
-            rotate: 90deg;
-            align-items: center;
-            width: min-content;
-        }
-
-
-        .pro-card:nth-child(even) {
-            margin-top: 40px;
-            margin-bottom: -40px;
-        }
-
-        .attribute-text {
-            color: #959595;
         }
 
         .xp-card {
             padding: 15px;
-            background-color: #1b1b1b;
+            background-color: #000000;
             border-radius: 20px;
             color: white;
             margin: 7px 0;
@@ -261,7 +204,7 @@
             font-weight: 200;
             list-style: circle;
             margin: 5px 0;
-            color: #c9c9c9;
+            color: #b8b8b8;
         }
 
         .skill-tag-cloud {
@@ -271,19 +214,18 @@
         }
 
         .contact-container {
-            background-color: #262626;
+            background-color: #000000;
             border-radius: 20px;
             padding: 10px;
             overflow: hidden;
             margin-bottom: 25vh;
         }
 
-        @media screen and (max-width: 804px) {
+        @media screen and (max-width: 850px) {
 
             .the-one-who-got-it-all {
                 display: grid;
                 grid-template-columns: 1fr;
-                max-width: 1000px;
                 margin: 0 auto;
                 gap: 10px;
             }
@@ -291,6 +233,7 @@
 
             .main-clmn {
                 margin: 0 10px;
+                grid-template-columns: 1fr 1fr;
             }
 
             .xp-card {
@@ -304,7 +247,6 @@
             nav {
                 position: relative;
                 top: 0;
-                width: 90%;
                 height: min-content;
                 display: flex;
                 flex-direction: column;
@@ -313,13 +255,17 @@
                 margin: 0 auto;
             }
 
+            .title-txt,
+            .txt,
+            .profile {
+                margin: 20px 10px;
+            }
+
             nav ul {
                 display: none;
             }
 
-
             .contact-container {
-                background-color: #262626;
                 border-radius: 20px;
                 padding: 10px;
                 overflow: hidden;
@@ -327,24 +273,279 @@
             }
         }
 
-        @media screen and (max-width: 495px) {
+        .section-title {
+            font-size: 30px;
+        }
+
+
+        .exp-card {
+            padding: 25px;
+            background-color: black;
+            border-radius: 30px;
+            margin: 10px;
+        }
+
+        .exp-card:hover {
+            cursor: pointer;
+        }
+
+        .exp-card:hover .card-header-text h3 {
+            text-decoration: underline;
+        }
+
+        .card-header-grid {
+            display: grid;
+            grid-template-columns: 50px auto 20px;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .compamylogo {
+            width: 100%;
+        }
+
+        .redirection-logo {
+            width: 100%;
+            filter: invert(1);
+        }
+
+        .card-header-text h3,
+        .card-header-text p {
+            margin: 5px 0;
+        }
+
+        .card-header-text p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .card-header-grid ul {
+            padding: 0 0 0 15px;
+            margin: 0 0 15px 0;
+        }
+
+        .card-header-grid ul li {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #b8b8b8;
+            list-style: disc;
+        }
+
+        .exp-card .skill-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .exp-card .skill-card {
+            background-color: #101013;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: rgb(219, 219, 219);
+        }
+
+        .pro-card {
+            aspect-ratio: 1;
+            background-color: #000000;
+            border-radius: 30px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .pro-card:nth-child(even) {
+            margin-bottom: 20px;
+            margin-top: -20px;
+        }
+
+        @media (max-width: 850px) {
+            .pro-card {
+                width: auto;
+            }
+        }
+
+        .pro-card-title {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pro-card-title img {
+            width: 23px;
+            padding: 3px;
+            background-color: #F4F4F3;
+            border-radius: 10px;
+            filter: invert(1);
+            border: 1px solid #c7c7c7;
+        }
+
+        .pro-card-title h3 {
+            font-size: 22.4px;
+            font-weight: 300;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .pro-card-header p {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 5px 0;
+        }
+
+        .skill-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .pro-card .skill-card {
+            background-color: #101013;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #F4F4F3;
+        }
+
+        .pro-card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .pro-card-body ul {
+            padding: 0 0 0 10px;
+            margin: 0;
+            list-style: disc;
+        }
+
+        .pro-card-body ul li {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 300;
+            color: #b8b8b8;
+            line-height: 1.4;
+        }
+
+        .pro-card:hover .view-on-github {
+            text-decoration: underline;
+        }
+
+        .certificate-card {
+            background-color: #000000;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            /* Adjusted from 0 to add space between cards */
+            width: 100%;
+            /* Make it responsive */
+            aspect-ratio: 16/9;
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            opacity: 1;
+            /* Override generic div opacity */
+            transform: none;
+            /* Override generic div transform */
+        }
+
+        .certificate-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .certificate-card-content {
+            background-color: #000000b8;
+            border-radius: 20px;
+            padding: 10px 20px;
+            overflow: hidden;
+            margin: 10px;
+            /* margin-bottom: 0; Removed as padding is on parent */
+            backdrop-filter: blur(10px);
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+            opacity: 1;
+            /* Ensure content container is not transparent */
+        }
+
+        .certificate-card:hover .certificate-card-content {
+            transform: translateY(0);
+        }
+
+        .certificate-card-content h2 {
+            font-size: 22.4px;
+            margin: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .certificate-card:hover .certificate-card-content h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .certificate-card-content p {
+            font-size: 14px;
+            margin: 0;
+            color: #bbbbbb;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out 0.1s, transform 0.3s ease-in-out 0.1s;
+        }
+
+        .certificate-card:hover .certificate-card-content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .certificate-card-content-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 1;
+            /* Override global div opacity */
+            transform: none;
+            /* Override global div transform */
+        }
+
+        .certificate-card-content-bottom a {
+            font-size: 14px;
+            margin: 0;
+            color: #bbbbbb;
+            text-decoration: none;
+            background-color: black;
+            padding: 5px 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .certificate-card-content-bottom a:hover {
+            background-color: white;
+            color: black;
+        }
+        @media screen and (max-width: 600px) {
             .main-clmn {
                 grid-template-columns: 1fr;
             }
 
             .pro-card:nth-child(even) {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            .pro-card {
-                background-color: #1b1b1b;
-                aspect-ratio: 3/2;
-                padding: 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                border-radius: 20px;
+                margin: 0;
             }
         }
     </style>
@@ -352,14 +553,13 @@
 
 <body>
     <div class="the-one-who-got-it-all">
-
         <nav>
             <div id="sidebar">
                 <h1 class="title-txt">Hello, World! <br>I'm Jatin</h1>
                 <p class="txt">Graduated in 2024 with a B.Tech in Computer Science from <a
                         href="https://www.galgotiasuniversity.edu.in/" target="_blank"
                         style="color: #fff;">Galgotias</a>, India. Passionate about TypeScript and JavaScript
-                    frameworks, with Python as my go-to for AI and ML projects. This site’s a glimpse into my work,
+                    frameworks, with Python as my go-to for AI and ML projects. This site's a glimpse into my work,
                     journey, and ways to connect.</p>
 
                 <ul>
@@ -375,7 +575,7 @@
                     <li><a class="menu-item" href="#section5">04&nbsp;
                             <hr>&nbsp;Certificates
                         </a></li>
-                    <li><a class="menu-item" href="#section4">04&nbsp;
+                    <li><a class="menu-item" href="#section4">05&nbsp;
                             <hr>&nbsp;Contact
                         </a></li>
                 </ul>
@@ -386,22 +586,23 @@
                 </div>
 
                 <div class="social-main">
-                    <a class="social" href="https://github.com/jatin0jha">
+                    <a class="social" target="_blank" href="https://github.com/jatin0jha">
                         <img src="asset/github.svg" class="social-icon" alt="">
                         GitHub
                         <img src="asset/openlink.svg" class="openlink" alt="">
                     </a>
-                    <a class="social" href="https://www.linkedin.com/in/jatin-jha-8b7633220/">
+                    <a class="social" target="_blank" href="https://www.linkedin.com/in/jatin-jha-8b7633220/">
                         <img src="asset/linkedin.svg" class="social-icon" style="filter: invert(1);" alt="">
                         Linkedin
                         <img src="asset/openlink.svg" class="openlink" alt="">
                     </a>
-                    <a class="social" href="https://www.youtube.com/@i-mded">
-                        <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" class="social-icon" style="filter: invert(1);" alt="">
+                    <a class="social" target="_blank" href="https://www.youtube.com/@i-mded">
+                        <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" class="social-icon"
+                            style="filter: invert(1);" alt="">
                         Youtube
                         <img src="asset/openlink.svg" class="openlink" alt="">
                     </a>
-                    <a class="social" href="jatin-profile.pdf">
+                    <a class="social" target="_blank" href="jatin-profile.pdf">
                         <img src="asset/resume.svg" class="social-icon" style="filter: invert(1);" alt="">
                         Resume
                         <img src="asset/openlink.svg" class="openlink" alt="">
@@ -411,12 +612,13 @@
         </nav>
         <main>
             <section id="section1">
-                <h3>Skills</h3>
+                <h3 class="section-title">Skills</h3>
                 <div class="skill-tag-cloud"></div>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
                 <script>
-                    const scn = new THREE.Scene(), cam = new THREE.PerspectiveCamera(75, 1, 0.1, 1e3), rndr = new THREE.WebGLRenderer({ antialias: !0 }), grp = new THREE.Group(), ldr = new THREE.TextureLoader(), icons = ['arduino', 'azure', 'bootstrap', 'chrome', 'css', 'express', 'figma', 'git', 'github', 'html', 'javascript', 'jquery', 'mongo', 'nextjs', 'nodejs', 'photoshop', 'python', 'react', 'rpi', 'sass', 'sql', 'typescript', 'vscode'].map(i => `asset/${i}.svg`), sps = [], r = 27, s = 6, c = document.querySelector('.skill-tag-cloud');
+                    const scn = new THREE.Scene(), cam = new THREE.PerspectiveCamera(75, 1, 0.1, 1e3), rndr = new THREE.WebGLRenderer({ antialias: !0, alpha: true }), grp = new THREE.Group(), ldr = new THREE.TextureLoader(), icons = ['arduino', 'azure', 'bootstrap', 'chrome', 'css', 'express', 'figma', 'git', 'github', 'html', 'javascript', 'jquery', 'mongo', 'nextjs', 'nodejs', 'photoshop', 'python', 'react', 'rpi', 'sass', 'sql', 'typescript', 'vscode'].map(i => `asset/${i}.svg`), sps = [], r = 27, s = 6, c = document.querySelector('.skill-tag-cloud');
                     rndr.setSize(375, 375); c.appendChild(rndr.domElement);
+                    rndr.setClearColor(0x000000, 0);
 
                     icons.forEach((p, i) => ldr.load(p, t => {
                         const phi = Math.acos(-1 + 2 * i / icons.length), theta = Math.sqrt(icons.length * Math.PI) * phi, sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: t }));
@@ -469,23 +671,35 @@
 
                         data.forEach(exp => {
                             const card = document.createElement('div');
-                            card.className = 'xp-card';
+                            card.className = 'exp-card';
 
                             card.innerHTML = `
-                        <div class="xp-head">
-                          <p>${exp.role}</p>
-                          <img src="asset/openlink.svg" class="openlink" alt="">
-                        </div>
-                        <div class="company-details">
-                          <img src="${exp.logo}" class="logo" style="${exp.logoStyle || ''}" alt="">
-                          <h2>${exp.company}</h2>
-                        </div>
-                        <p class="date">${exp.date}</p>
-                        <ul>
-                          ${exp.skills.map(skill => `<li>${skill}</li>`).join('')}
-                        </ul>
-                      `;
-
+                                <div class="card-header-grid">
+                                    <img src="${exp.logo}" alt="${exp.company} logo" class="compamylogo" style="${exp.logoStyle || ''}">
+                                    
+                                    <div class="card-header-text">
+                                        <h3>${exp.company}</h3>
+                                        <p>${exp.role} | ${exp.date}</p>
+                                    </div>
+                                    <div style="height: 100%; display: flex; align-items: flex-start; justify-content: right;">
+                                        <img src="asset/openlink.svg" alt="Open link" class="redirection-logo">
+                                    </div>
+                                    <div></div>
+                                    <ul>
+                                        ${exp.description ? exp.description.map(point => `<li>${point}</li>`).join('') : ''}
+                                    </ul>
+                                </div>
+                                    ${exp.skills ? `
+                                    <div class="skill-cards">
+                                        ${exp.skills.map(skill => `<div class="skill-card">${skill}</div>`).join('')}
+                                    </div>
+                                    ` : ''}
+                            `;
+                            if (exp.companyUrl) {
+                                card.addEventListener('click', () => {
+                                    window.open(exp.companyUrl, '_blank');
+                                });
+                            }
                             section.appendChild(card);
                         });
                     })
@@ -496,13 +710,13 @@
 
 
             <section id="section2">
-                <h3>Experience</h3>
+                <h3 class="section-title">Experience</h3>
                 <!-- Cards will be inserted here -->
             </section>
 
 
             <section id="section3">
-                <h3>Projects</h3>
+                <h3 class="section-title">Projects</h3>
                 <div class="main-clmn" id="main-clmn">
                     <!-- Project cards will be inserted here -->
                 </div>
@@ -516,19 +730,42 @@
                     function createProjectCard(repo) {
                         const card = document.createElement('div');
                         card.classList.add('pro-card');
+                        card.addEventListener('click', () => {
+                            window.open(repo.html_url, '_blank');
+                        });
 
-                        const deploymentUrl = repo.homepage ? repo.homepage : repo.html_url;
+                        const formatDate = (dateString) => {
+                            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+                            return new Date(dateString).toLocaleDateString(undefined, options);
+                        };
+
+                        let skillsHtml = '';
+                        // Prefer topics for skills, fallback to language
+                        if (repo.topics && repo.topics.length > 0) {
+                            skillsHtml = repo.topics.map(topic => `<div class="skill-card">${topic}</div>`).join('');
+                        } else if (repo.language) {
+                            skillsHtml = `<div class="skill-card">${repo.language}</div>`;
+                        }
+                        // If no topics and no language, skillsHtml will be empty, which is fine.
 
                         const cardContent = `
-                            <div>
-                                <img src="asset/earth.svg" alt="">
-                                <p class="attribute-text">${repo.description || 'No description available.'}</p>
+                            <div class="pro-card-header">
+                                <div class="pro-card-title">
+                                    <img src="https://www.svgrepo.com/show/521573/code.svg" alt="Code Icon">
+                                    <h3>${repo.name}</h3>
+                                </div>
+                                <p>Created: ${formatDate(repo.created_at)}</p>
                             </div>
-                            <h4 class="pro-attribute-subhead">${repo.name}
-                                <a href="${deploymentUrl}" class="visit-link" target="_blank">Visit
-                                    <img src="asset/openlink.svg" class="openlink" style="height: 17px; opacity: 60%;" alt="">
-                                </a>
-                            </h4>
+                            <div class="pro-card-body">
+                                <ul>
+                                    <li>${repo.description || 'No description available.'}</li>
+                                    <li>Last updated: ${formatDate(repo.updated_at)}</li>
+                                    <li class="view-on-github">View on GitHub</li>
+                                </ul>
+                                <div class="skill-cards">
+                                    ${skillsHtml}
+                                </div>
+                            </div>
                         `;
 
                         card.innerHTML = cardContent;
@@ -589,87 +826,76 @@
                 </script>
             </section>
 
-            <style>
-                .certificate {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    background-color: #1B1B1B;
-                    padding: 15px;
-                    border-radius: 30px;
-                }
-
-                .certificate-details {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-                }
-
-                .certificate-img {
-                    width: 100%;
-                    height: 100%;
-                    margin: 0 auto;
-                    display: block;
-                    border-radius: 15px;
-                }
-
-                .cert-detail {
-                    color: #959595;
-                    font-size: 14px;
-                    margin: 0;
-                }
-
-                a{
-                    color: #959595;
-                    text-decoration: none;
-                }
-
-                .cert-btn {
-                    background-color: #7bba96;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    margin-top: 10px;
-                    transition: background-color 0.3s ease;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .cert-btn:hover {
-                    background-color: #6a9b85;
-                }
-            </style>
-
             <section id="section5">
-                <h3 style="margin-top: 100px;">Certificates</h3>
-                <div class="certificate">
-                    <img src="certificates/DotNetCert.png" class="certificate-img" alt="">
-                    <div class="certificate-details">
-                        <div>
-                            <h2>Foundational C# with Microsoft</h2>
-                            <p class="cert-detail">April, 2025</p>
-                            <p class="cert-detail">Credential ID: imded-fcswm</p>
-                        </div>
-                        <a href="https://www.freecodecamp.org/certification/imded/foundational-c-sharp-with-microsoft" target="_blank"><button class="cert-btn">Open<img src="asset/openlink.svg" class="openlink" style="height: 17px; margin: 0 0 0 5px; " alt=""></button></a>
-                    </div>
-                </div>
-                <div class="certificate">
-                    <img src="certificates/CS50.png" class="certificate-img" alt="">
-                    <div class="certificate-details">
-                        <div>
-                            <h2>CS50x</h2>
-                            <p class="cert-detail">April, 2025</p>
-                            <p class="cert-detail">Credential ID: df8c97b1-8ec4-451f-b1ef-eac3f5078a26</p>
-                        </div>
-                        <a href="https://certificates.cs50.io/df8c97b1-8ec4-451f-b1ef-eac3f5078a26.pdf?size=letter" target="_blank"><button class="cert-btn">Open<img src="asset/openlink.svg" class="openlink" style="height: 17px; margin: 0 0 0 5px; " alt=""></button></a>
-                    </div>
-                </div>
+                <h3 class="section-title">Certificates</h3>
+                <!-- Certificate cards will be dynamically inserted here -->
             </section>
 
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    fetch('cert.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(certificates => {
+                            const section = document.getElementById('section5');
+                            if (!section) {
+                                console.error('Certificate section (section5) not found.');
+                                return;
+                            }
+
+                            certificates.forEach(cert => {
+                                const card = document.createElement('div');
+                                card.className = 'certificate-card';
+                                card.style.backgroundImage = `url(${cert.image_url})`;
+                                // Set ARIA label for accessibility
+                                card.setAttribute('aria-label', `${cert.title} certificate`);
+
+                                const content = document.createElement('div');
+                                content.className = 'certificate-card-content';
+
+                                const title = document.createElement('h2');
+                                title.textContent = cert.title;
+
+                                const bottomContent = document.createElement('div');
+                                bottomContent.className = 'certificate-card-content-bottom';
+
+                                const details = document.createElement('p');
+                                details.innerHTML = `${cert.date}<br>Credential ID: ${cert.credential_id}`;
+
+                                const link = document.createElement('a');
+                                link.href = cert.view_url;
+                                link.target = '_blank';
+                                link.textContent = 'View';
+                                // Add ARIA label to link for accessibility
+                                link.setAttribute('aria-label', `View ${cert.title} certificate details`);
+
+
+                                bottomContent.appendChild(details);
+                                bottomContent.appendChild(link);
+
+                                content.appendChild(title);
+                                content.appendChild(bottomContent);
+
+                                card.appendChild(content);
+                                section.appendChild(card);
+                            });
+                        })
+                        .catch(err => {
+                            console.error('Failed to load or process certificate data:', err);
+                            const section = document.getElementById('section5');
+                            if (section) {
+                                section.innerHTML += '<p style="color:red;">Could not load certificates.</p>';
+                            }
+                        });
+                });
+            </script>
+
             <section id="section4">
-                <h3>Contact</h3>
+                <h3 class="section-title">Contact</h3>
                 <div class="contact-container">
                     <div style="margin-bottom: -120px;">
                         <div data-aidaform-widget="form-2019-12"
@@ -710,7 +936,7 @@
     </script>
 
     <script>
-        const cards = document.querySelectorAll('.xp-card');
+        const cards = document.querySelectorAll('.exp-card');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -737,7 +963,7 @@
             }, { threshold: 0.1 });
 
             function observeNewDivs() {
-                document.querySelectorAll("div").forEach((div) => {
+                document.querySelectorAll("div:not(.certificate-card):not(.certificate-card-content):not(.certificate-card-content-bottom)").forEach((div) => { // Exclude new certificate divs
                     if (!div.classList.contains("fade-in")) {
                         observer.observe(div);
                     }
