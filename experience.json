@@ -1,26 +1,37 @@
 [
     {
         "role": "Software Developer",
-        "company": "LIVINGPOINT SALES PVT. LTD.",
-        "logo": "https://scci.co.in/image/data/logo1.png",
+        "company": "LIVINGPOINT",
+        "logo": "livingpoint.png", 
         "date": "07/04/2025 - present",
+        "companyUrl": "https://scci.co.in/",
+        "description": [
+            "Led development of web applications using React and Node.js",
+            "Integrated Gen AI capabilities into existing products"
+        ],
         "skills": [
             "Gen AI Development",
-            "Web Development",
-            "AL Language",
+            "React.js",
+            "Node.js", 
             "Microsoft Dynamics 365",
             ".NET Core",
-            "Wordpress"
+            "WordPress"
         ]
     },
     {
         "role": "Software Developer",
-        "company": "Janki Creations",
+        "company": "Janki",
         "logo": "https://janki.pages.dev/asset/WhatsApp%20Image%202023-08-11%20at%2012.43.24.jpeg",
         "date": "01/02/2025 - 01/04/2025",
+        "companyUrl": "https://janki.co.in",
+        "description": [
+            "Developed microservices architecture using Java Spring Boot",
+            "Built RESTful APIs with Node.js and Express.js"
+        ],
         "skills": [
             "Java",
-            "Microservices",
+            "Spring Boot",
+            "Microservices", 
             "REST API",
             "Node.js",
             "Express.js"
@@ -28,39 +39,60 @@
     },
     {
         "role": "Software Developer",
-        "company": "McDermott International, Ltd",
-        "logo": "https://eco-cdn.iqpc.com/eco/images/partners/hSBFAjwe319cmBnPGl15RaBj5yCxnICDnwHOjEir.png",
+        "company": "McDermott",
+        "logo": "MCDERMOTT.png",
         "date": "05/02/2024 - 13/08/2024",
+        "companyUrl": "https://www.mcdermott.com",
+        "description": [
+            "Developed enterprise applications using Angular and ASP.NET",
+            "Created interactive dashboards with Power BI"
+        ],
         "skills": [
             "Angular",
             "ASP.NET",
-            "Ms SQL",
-            "Power Bi"
+            "MS SQL",
+            "Power BI",
+            "TypeScript",
+            "Bootstrap"
         ]
     },
     {
         "role": "AI Intern",
-        "company": "International Business Machines Corporation",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+        "company": "IBM Corporation",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/541px-IBM_logo.svg.png",
         "date": "05/02/2024 - 13/08/2024",
+        "companyUrl": "https://www.ibm.com",
+        "description": [
+            "Developed and trained machine learning models for predictive analytics",
+            "Performed data preprocessing and feature engineering"
+        ],
         "skills": [
             "Python",
             "NumPy",
             "Pandas",
-            "Machine Learning"
+            "Machine Learning",
+            "TensorFlow",
+            "Scikit-learn"
         ]
     },
     {
-        "role": "Startup",
+        "role": "Founder",
         "company": "U-Fabric",
         "logo": "https://jatin0jha.github.io/U-Fab/asseta/logo%20blck.png",
         "logoStyle": "filter: invert(1);",
         "date": "05/02/2024 - 13/08/2024",
+        "companyUrl": "https://jatin0jha.github.io/U-Fab",
+        "description": [
+            "Founded and led an e-commerce startup in the fabric industry",
+            "Developed full-stack web platform from scratch"
+        ],
         "skills": [
-            "Sales",
+            "Entrepreneurship",
             "Web Development",
             "Leadership",
-            "Team work"
+            "Team Management",
+            "Digital Marketing",
+            "E-commerce"
         ]
     }
 ]
