@@ -219,6 +219,7 @@
             padding: 10px;
             overflow: hidden;
             margin-bottom: 25vh;
+            border: 1px solid #333;
         }
 
         @media screen and (max-width: 850px) {
@@ -283,6 +284,7 @@
             background-color: black;
             border-radius: 30px;
             margin: 10px;
+            border: 1px solid #333;
         }
 
         .exp-card:hover {
@@ -335,7 +337,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
-            margin-top: 10px;
+            padding-top: 10px;
         }
 
         .exp-card .skill-card {
@@ -344,6 +346,7 @@
             border-radius: 10px;
             font-size: 12px;
             color: rgb(219, 219, 219);
+            border: 1px solid #333;
         }
 
         .pro-card {
@@ -355,6 +358,7 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
+            border: 1px solid #333;
         }
 
         .pro-card:nth-child(even) {
@@ -392,10 +396,15 @@
             text-overflow: ellipsis;
         }
 
+        .pro-card-header {
+            border-bottom: 1px solid #333;
+        }
+
         .pro-card-header p {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 300;
             margin: 5px 0;
+            color: #b8b8b8;
         }
 
         .skill-cards {
@@ -412,6 +421,7 @@
             font-size: 14px;
             font-weight: 300;
             color: #F4F4F3;
+            border: 1px solid #333;
         }
 
         .pro-card-body {
@@ -459,6 +469,7 @@
             /* Override generic div opacity */
             transform: none;
             /* Override generic div transform */
+            border: 1px solid #333;
         }
 
         .certificate-card:hover {
@@ -907,7 +918,7 @@
         </main>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center; margin: 20px;">
+    <div style="display: flex; align-items: center; justify-content: center; margin: 0 20px; padding: 20px 0; border-top: 1px solid #333;">
         made with <img src="asset/heart.svg" class="openlink" alt=""></div>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
