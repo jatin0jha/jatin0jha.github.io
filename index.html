@@ -11,6 +11,14 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
         div {
             opacity: 0;
             transform: translateY(30px);
@@ -22,13 +30,6 @@
             transform: translateY(0) !important;
         }
 
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
 
         .the-one-who-got-it-all {
             display: grid;
@@ -48,10 +49,6 @@
             justify-content: center;
         }
 
-        nav span u {
-            color: white;
-        }
-
         nav h1 {
             font-size: 40px;
         }
@@ -63,7 +60,9 @@
 
 
         .profile {
-            display: flex;
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 10px;
             align-items: center;
             margin: 20px 0;
         }
@@ -71,9 +70,9 @@
 
         .mail-id {
             color: #959595;
-            margin: 0 10px;
             text-decoration: none;
             transition: 0.5s;
+            width: max-content;
         }
 
         .mail-id:hover {
@@ -86,25 +85,35 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             width: min-content;
+            gap: 10px;
         }
 
         .social-icon {
             height: 20px;
-            margin: 0 10px;
         }
 
         .social {
             color: #fff;
             text-decoration: none;
             display: flex;
-            align-items: center;
-            margin: 10px 10px;
             font-size: 14px;
+            gap: 10px;
+            background-color: #0d0d0d;
+            padding: 5px 7px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            opacity: 0.8;
+        }
+
+        .social:hover {
+            background-color: #222;
+            opacity: 1;
+            transform: translateY(-3px) scale(1.04);
         }
 
         .openlink {
             filter: invert(1);
-            margin: 0 10px;
             height: 20px;
         }
 
@@ -364,10 +373,6 @@
             text-overflow: ellipsis;
         }
 
-        .pro-card-header {
-            border-bottom: 1px solid #333;
-        }
-
         .pro-card-header p {
             font-size: 12px;
             font-weight: 300;
@@ -526,6 +531,14 @@
             .pro-card:nth-child(even) {
                 margin: 0;
             }
+
+            .social-main {
+                margin: 10px;
+            }
+
+            .certificate-card {
+                margin: 10px;
+            }
         }
     </style>
 </head>
@@ -534,12 +547,12 @@
     <div class="the-one-who-got-it-all">
         <nav>
             <div id="sidebar">
-                <h1 class="title-txt">Hello, World! <br>I'm <b style="
-                    background: linear-gradient(135deg, #ff9ada, #76c4ff);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    color: transparent; font-size: 100;">Jatin</b></h1>
+                <h1 class="title-txt">
+                    Hello, World! <br>I'm 
+                    <b style="background: linear-gradient(135deg, #ff9ada, #76c4ff);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;color: transparent; font-size: 100;">
+                        Jatin
+                    </b>
+                </h1>
                 <p class="txt">Graduated in 2024 with a B.Tech in Computer Science from <a
                         href="https://www.galgotiasuniversity.edu.in/" target="_blank"
                         style="color: #fff;">Galgotias</a>, India. Passionate about TypeScript and JavaScript
@@ -909,7 +922,7 @@
             cursor: pointer;
             top: 0;
             position: relative;
-            transition: width 0.3s cubic-bezier(.4,2,.6,1), height 0.3s cubic-bezier(.4,2,.6,1);
+            transition: width 0.3s cubic-bezier(.4, 2, .6, 1), height 0.3s cubic-bezier(.4, 2, .6, 1);
         }
 
         .item::before {
@@ -940,7 +953,7 @@
         .item img {
             filter: invert(0.5);
             width: 60%;
-            transition: filter 0.3s cubic-bezier(.4,2,.6,1);
+            transition: filter 0.3s cubic-bezier(.4, 2, .6, 1);
         }
 
         .item img:hover {
@@ -1030,63 +1043,63 @@
     </script>
 
     <script>
-    // This script will add 'active' class to the dock item when its section is in view
-    // and trigger a dock "pop" animation for 0.3s when the active section changes (like a hover effect)
-    document.addEventListener('DOMContentLoaded', function () {
-        const dockItems = document.querySelectorAll('.macos-dock .item');
-        const sections = [
-            document.getElementById('section1'),
-            document.getElementById('section2'),
-            document.getElementById('section3'),
-            document.getElementById('section5'),
-            document.getElementById('section4')
-        ];
+        // This script will add 'active' class to the dock item when its section is in view
+        // and trigger a dock "pop" animation for 0.3s when the active section changes (like a hover effect)
+        document.addEventListener('DOMContentLoaded', function () {
+            const dockItems = document.querySelectorAll('.macos-dock .item');
+            const sections = [
+                document.getElementById('section1'),
+                document.getElementById('section2'),
+                document.getElementById('section3'),
+                document.getElementById('section5'),
+                document.getElementById('section4')
+            ];
 
-        let lastActiveIndex = -1;
-        let animationTimeout = null;
+            let lastActiveIndex = -1;
+            let animationTimeout = null;
 
-        function setActiveDockItem() {
-            let found = false;
-            for (let i = 0; i < sections.length; i++) {
-                const section = sections[i];
-                if (!section) continue;
-                const rect = section.getBoundingClientRect();
-                // Section is considered in view if its top is above 100px from top and its bottom is below 100px
-                if (rect.top <= 100 && rect.bottom > 100) {
-                    if (lastActiveIndex !== i) {
-                        // Remove previous animation class
-                        dockItems.forEach(item => item.classList.remove('section-animate'));
-                        // Remove previous active
-                        dockItems.forEach(item => item.classList.remove('active'));
-                        // Set new active
-                        dockItems[i].classList.add('active');
-                        // Add animation class
-                        dockItems[i].classList.add('section-animate');
-                        // Remove animation class after 0.3s
-                        if (animationTimeout) clearTimeout(animationTimeout);
-                        animationTimeout = setTimeout(() => {
-                            dockItems[i].classList.remove('section-animate');
-                        }, 300);
-                        lastActiveIndex = i;
+            function setActiveDockItem() {
+                let found = false;
+                for (let i = 0; i < sections.length; i++) {
+                    const section = sections[i];
+                    if (!section) continue;
+                    const rect = section.getBoundingClientRect();
+                    // Section is considered in view if its top is above 100px from top and its bottom is below 100px
+                    if (rect.top <= 100 && rect.bottom > 100) {
+                        if (lastActiveIndex !== i) {
+                            // Remove previous animation class
+                            dockItems.forEach(item => item.classList.remove('section-animate'));
+                            // Remove previous active
+                            dockItems.forEach(item => item.classList.remove('active'));
+                            // Set new active
+                            dockItems[i].classList.add('active');
+                            // Add animation class
+                            dockItems[i].classList.add('section-animate');
+                            // Remove animation class after 0.3s
+                            if (animationTimeout) clearTimeout(animationTimeout);
+                            animationTimeout = setTimeout(() => {
+                                dockItems[i].classList.remove('section-animate');
+                            }, 300);
+                            lastActiveIndex = i;
+                        }
+                        found = true;
+                        break;
                     }
-                    found = true;
-                    break;
+                }
+                // If no section is in view, remove all actives and animation
+                if (!found) {
+                    dockItems.forEach(item => {
+                        item.classList.remove('active');
+                        item.classList.remove('section-animate');
+                    });
+                    lastActiveIndex = -1;
                 }
             }
-            // If no section is in view, remove all actives and animation
-            if (!found) {
-                dockItems.forEach(item => {
-                    item.classList.remove('active');
-                    item.classList.remove('section-animate');
-                });
-                lastActiveIndex = -1;
-            }
-        }
 
-        window.addEventListener('scroll', setActiveDockItem, { passive: true });
-        window.addEventListener('resize', setActiveDockItem);
-        setActiveDockItem();
-    });
+            window.addEventListener('scroll', setActiveDockItem, { passive: true });
+            window.addEventListener('resize', setActiveDockItem);
+            setActiveDockItem();
+        });
     </script>
 
     <script>
