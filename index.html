@@ -51,6 +51,7 @@
 
         nav h1 {
             font-size: 40px;
+            margin-top: 0;
         }
 
         nav p {
@@ -550,18 +551,34 @@
                 <h1 class="title-txt">
                     Hello, World! <br>I'm
                     <span style="
-                        background: linear-gradient(135deg, #ff9ada, #76c4ff, #ff9ada 80%);
-                        background-size: 200% 200%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        background-clip: text;
-                        color: transparent;
-                        animation: animated-gradient 3s linear infinite alternate;
+                        position: relative;
+                        display: inline-block;
                     ">
-                        Jatin
+                        <span style="
+                            position: absolute;
+                            inset: 0;
+                            z-index: 0;
+                            background: rgb(255, 255, 255);
+                            border-radius: 6px;
+                            pointer-events: none;
+                        "></span>
+                        <span style="
+                            position: relative;
+                            z-index: 1;
+                            background: url('https://i.pinimg.com/originals/51/28/b8/5128b8d2f2d74a3b0414357b50fbedd8.gif') center center / cover no-repeat, rgb(0, 0, 0);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            color: transparent;
+                            display: inline-block;
+                            animation: animated-gif-bg 8s linear infinite alternate;
+                            padding: 0 2px;
+                        ">
+                            Jatin
+                        </span>
                     </span>
                     <style>
-                        @keyframes animated-gradient {
+                        @keyframes animated-gif-bg {
                             0% {
                                 background-position: 0% 50%;
                             }
