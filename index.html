@@ -548,10 +548,28 @@
         <nav>
             <div id="sidebar">
                 <h1 class="title-txt">
-                    Hello, World! <br>I'm 
-                    <b style="background: linear-gradient(135deg, #ff9ada, #76c4ff);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;color: transparent; font-size: 100;">
+                    Hello, World! <br>I'm
+                    <span style="
+                        background: linear-gradient(135deg, #ff9ada, #76c4ff, #ff9ada 80%);
+                        background-size: 200% 200%;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        color: transparent;
+                        animation: animated-gradient 3s linear infinite alternate;
+                    ">
                         Jatin
-                    </b>
+                    </span>
+                    <style>
+                        @keyframes animated-gradient {
+                            0% {
+                                background-position: 0% 50%;
+                            }
+                            100% {
+                                background-position: 100% 50%;
+                            }
+                        }
+                    </style>
                 </h1>
                 <p class="txt">Graduated in 2024 with a B.Tech in Computer Science from <a
                         href="https://www.galgotiasuniversity.edu.in/" target="_blank"
