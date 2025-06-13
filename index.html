@@ -41,8 +41,7 @@
         nav {
             position: sticky;
             top: 0;
-            width: 100%;
-            height: 95vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,35 +59,6 @@
         nav p {
             color: rgba(255, 255, 255, 0.612);
             font-weight: 250;
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li a {
-            color: #b8b8b8;
-            display: flex;
-            width: min-content;
-            align-items: center;
-            text-decoration: none;
-            padding-bottom: 7px;
-        }
-
-        .menu-item hr {
-            border: 1px solid rgb(112, 112, 112);
-            width: 40px;
-            transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
-            margin: 0 5px;
-        }
-
-        .active hr {
-            border: 1px solid white;
-            width: 80px;
-        }
-
-        .active {
-            color: white;
         }
 
 
@@ -270,7 +240,6 @@
                 border-radius: 20px;
                 padding: 10px;
                 overflow: hidden;
-                margin-bottom: 0;
             }
         }
 
@@ -307,7 +276,6 @@
         }
 
         .redirection-logo {
-            width: 100%;
             filter: invert(1);
         }
 
@@ -454,7 +422,6 @@
             overflow: hidden;
             margin-bottom: 8px;
             /* Adjusted from 0 to add space between cards */
-            width: 100%;
             /* Make it responsive */
             aspect-ratio: 16/9;
             background-size: cover;
@@ -550,6 +517,7 @@
             background-color: white;
             color: black;
         }
+
         @media screen and (max-width: 600px) {
             .main-clmn {
                 grid-template-columns: 1fr;
@@ -566,30 +534,17 @@
     <div class="the-one-who-got-it-all">
         <nav>
             <div id="sidebar">
-                <h1 class="title-txt">Hello, World! <br>I'm Jatin</h1>
+                <h1 class="title-txt">Hello, World! <br>I'm <b style="
+                    background: linear-gradient(135deg, #ff9ada, #76c4ff);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    color: transparent; font-size: 100;">Jatin</b></h1>
                 <p class="txt">Graduated in 2024 with a B.Tech in Computer Science from <a
                         href="https://www.galgotiasuniversity.edu.in/" target="_blank"
                         style="color: #fff;">Galgotias</a>, India. Passionate about TypeScript and JavaScript
                     frameworks, with Python as my go-to for AI and ML projects. This site's a glimpse into my work,
                     journey, and ways to connect.</p>
-
-                <ul>
-                    <li><a class="menu-item active" href="#section1">01&nbsp;
-                            <hr>&nbsp;Skills
-                        </a></li>
-                    <li><a class="menu-item" href="#section2">02&nbsp;
-                            <hr>&nbsp;Experience
-                        </a></li>
-                    <li><a class="menu-item" href="#section3">03&nbsp;
-                            <hr>&nbsp;Projects
-                        </a></li>
-                    <li><a class="menu-item" href="#section5">04&nbsp;
-                            <hr>&nbsp;Certificates
-                        </a></li>
-                    <li><a class="menu-item" href="#section4">05&nbsp;
-                            <hr>&nbsp;Contact
-                        </a></li>
-                </ul>
 
                 <div class="profile">
                     <img class="profile-pic" style="height: 50px; border-radius: 50%;" src="pfp-yt.jpg" alt="">
@@ -621,6 +576,7 @@
                 </div>
             </div>
         </nav>
+
         <main>
             <section id="section1">
                 <h3 class="section-title">Skills</h3>
@@ -841,7 +797,6 @@
                 <h3 class="section-title">Certificates</h3>
                 <!-- Certificate cards will be dynamically inserted here -->
             </section>
-
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     fetch('cert.json')
@@ -918,32 +873,220 @@
         </main>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center; margin: 0 20px; padding: 20px 0; border-top: 1px solid #333; max-width: 1000px; margin: 0 auto;;">
+    <div
+        style="display: flex; align-items: center; justify-content: center; margin: 0 20px; padding: 20px 0; border-top: 1px solid #333; max-width: 1000px; margin: 0 auto;;">
         made with <img src="asset/heart.svg" class="openlink" alt=""></div>
+
+
+    <style>
+        .macos-dock {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 8px;
+            height: 58px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 1000;
+            background-color: #0d0d0dc0;
+            backdrop-filter: blur(10px);
+            height: 37px;
+        }
+
+        .items {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 0 8px;
+        }
+
+        .item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            top: 0;
+            position: relative;
+            transition: width 0.3s cubic-bezier(.4,2,.6,1), height 0.3s cubic-bezier(.4,2,.6,1);
+        }
+
+        .item::before {
+            content: attr(data-tooltip);
+            display: block;
+            position: absolute;
+            top: -28px;
+            font-size: 10px;
+            border-radius: 4px;
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: #0D0D0D;
+            padding: 3px 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.1s ease-out opacity;
+        }
+
+        .item:hover::before {
+            opacity: 1;
+        }
+
+        .item>svg {
+            width: 50%;
+            color: #f0f0f0;
+        }
+
+        .item img {
+            filter: invert(0.5);
+            width: 60%;
+            transition: filter 0.3s cubic-bezier(.4,2,.6,1);
+        }
+
+        .item img:hover {
+            filter: invert(1);
+        }
+
+        .item.active>img {
+            filter: invert(1);
+        }
+
+        /* Animation for dock item when section changes */
+        .item.section-animate {
+            width: 60px !important;
+            height: 60px !important;
+            z-index: 2;
+        }
+    </style>
+
+    <div
+        style="position: fixed; bottom: 70px; display: flex; align-items: center; justify-content: center; width: 100%;">
+
+        <div class="macos-dock" data-vel-plugin="MacOsDock" data-vel-view="root">
+            <div class="items">
+                <a href="#section1" class="item active" data-vel-view="item" data-tooltip="Skills">
+                    <img src="https://www.svgrepo.com/show/376484/earth-sphere-line.svg" alt="">
+                </a>
+                <a href="#section2" class="item" data-vel-view="item" data-tooltip="Expiren">
+                    <img src="https://www.svgrepo.com/show/483943/old-man-1.svg" alt="">
+                </a>
+                <a href="#section3" class="item" data-vel-view="item" data-tooltip="Projects">
+                    <img src="https://www.svgrepo.com/show/535429/hammer.svg" alt="">
+                </a>
+                <a href="#section5" class="item" data-vel-view="item" data-tooltip="Certificates">
+                    <img src="https://www.svgrepo.com/show/489411/certificate-badge.svg" alt="">
+                </a>
+                <a href="#section4" class="item" data-vel-view="item" data-tooltip="Contact">
+                    <img src="https://www.svgrepo.com/show/533193/mail.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://jatin0jha.github.io/fluffy-pancake/fluid.js'></script>
     <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            const menuItems = document.querySelectorAll('#sidebar .menu-item');
-            const sections = document.querySelectorAll('section');
+        const { createApp, Events, Utils } = Veloxi
 
-            function setActiveMenuItem() {
-                const scrollPosition = window.scrollY;
+        const MacOsDockPlugin = (context) => {
+            let items
+            let root
+            context.subscribeToEvents((eventBus) => {
+                eventBus.subscribeToEvent(Events.PointerMoveEvent, onMouseMove)
+            })
 
-                sections.forEach(function (section, index) {
-                    const sectionTop = section.offsetTop - 60; // Offset to account for fixed header
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    console.log(sectionTop, sectionBottom);
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        menuItems.forEach(function (item) {
-                            item.classList.remove('active');
-                        });
-
-                        menuItems[index].classList.add('active');
-                    }
-                });
+            function onMouseMove(event) {
+                if (!root.intersects(event.x, event.y)) {
+                    items.forEach((item) => {
+                        item.size.reset()
+                    })
+                    return
+                }
+                items.forEach((item) => {
+                    const progress = Utils.pointToViewProgress(
+                        { x: event.x, y: event.y },
+                        item,
+                        120
+                    )
+                    const scale = Utils.remap(progress, 0, 1, 1, 2)
+                    item.size.set({ width: 40 * scale, height: 40 * scale })
+                })
             }
-            window.addEventListener('scroll', setActiveMenuItem);
-        });
+
+            context.setup(() => {
+                root = context.getView('root')
+                items = context.getViews('item')
+                items.forEach((item) => {
+                    item.size.setAnimator('dynamic')
+                    item.origin.set({ x: 0.5, y: 1 })
+                })
+            })
+        }
+
+        MacOsDockPlugin.pluginName = 'MacOsDock'
+
+        const app = createApp()
+        app.addPlugin(MacOsDockPlugin)
+        app.run()
+    </script>
+
+    <script>
+    // This script will add 'active' class to the dock item when its section is in view
+    // and trigger a dock "pop" animation for 0.3s when the active section changes (like a hover effect)
+    document.addEventListener('DOMContentLoaded', function () {
+        const dockItems = document.querySelectorAll('.macos-dock .item');
+        const sections = [
+            document.getElementById('section1'),
+            document.getElementById('section2'),
+            document.getElementById('section3'),
+            document.getElementById('section5'),
+            document.getElementById('section4')
+        ];
+
+        let lastActiveIndex = -1;
+        let animationTimeout = null;
+
+        function setActiveDockItem() {
+            let found = false;
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                if (!section) continue;
+                const rect = section.getBoundingClientRect();
+                // Section is considered in view if its top is above 100px from top and its bottom is below 100px
+                if (rect.top <= 100 && rect.bottom > 100) {
+                    if (lastActiveIndex !== i) {
+                        // Remove previous animation class
+                        dockItems.forEach(item => item.classList.remove('section-animate'));
+                        // Remove previous active
+                        dockItems.forEach(item => item.classList.remove('active'));
+                        // Set new active
+                        dockItems[i].classList.add('active');
+                        // Add animation class
+                        dockItems[i].classList.add('section-animate');
+                        // Remove animation class after 0.3s
+                        if (animationTimeout) clearTimeout(animationTimeout);
+                        animationTimeout = setTimeout(() => {
+                            dockItems[i].classList.remove('section-animate');
+                        }, 300);
+                        lastActiveIndex = i;
+                    }
+                    found = true;
+                    break;
+                }
+            }
+            // If no section is in view, remove all actives and animation
+            if (!found) {
+                dockItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.classList.remove('section-animate');
+                });
+                lastActiveIndex = -1;
+            }
+        }
+
+        window.addEventListener('scroll', setActiveDockItem, { passive: true });
+        window.addEventListener('resize', setActiveDockItem);
+        setActiveDockItem();
+    });
     </script>
 
     <script>
