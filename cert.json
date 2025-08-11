@@ -19,5 +19,12 @@
     "date": "April, 2025",
     "credential_id": "df8c97b1-8ec4-451f-b1ef-eac3f5078a26",
     "view_url": "https://certificates.cs50.io/df8c97b1-8ec4-451f-b1ef-eac3f5078a26.pdf?size=letter"
+  },
+  {
+    "image_url": "certificates/anthropic.png",
+    "title": "Anthropic",
+    "date": "August, 2025",
+    "credential_id": "78hxwiv9tk85",
+    "view_url": "https://verify.skilljar.com/c/78hxwiv9tk85"
   }
 ] 
